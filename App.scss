@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0e2020;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  scroll-margin-top: 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// colors
+/*
+$color-grey-dark: #0e2020;
+$color-white-light: #f9f8ef;
+$color-brown-light: #dabe9b;
+$color-brown-medium: #d19962;
+$color-green-blue: #71c0b1;
+*/
+
+@mixin tablet() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin miniDesktop() {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+@mixin desktop() {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
