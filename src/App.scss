@@ -1,3 +1,5 @@
+@use "./styles/variables.scss" as *;
+
 * {
   margin: 0;
   padding: 0;
@@ -9,38 +11,40 @@
 }
 
 body {
-  background-color: #dabe9b;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  scroll-margin-top: 50px;
+  background-color: $color-white-light;
+  font-family: sans-serif;
+  color: $color-grey-dark;
+  scroll-margin-top: 60px;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-// colors
-/*
-$color-grey-dark: #0e2020;
-$color-white-light: #f9f8ef;
-$color-brown-light: #dabe9b;
-$color-brown-medium: #d19962;
-$color-green-blue: #71c0b1;
-*/
+.main {
+  margin-top: 60px;
+  scroll-margin-top: 60px;
+}
 
-@mixin tablet() {
-  @media (min-width: 768px) {
-    @content;
+.main_section-subtitle {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.main_section-title {
+  text-align: center;
+  font-family: "futura", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  @include tablet() {
+    font-size: 1.8rem;
+  }
+  @include desktop() {
+    font-size: 2rem;
   }
 }
-@mixin miniDesktop() {
-  @media (min-width: 1000px) {
-    @content;
-  }
-}
-@mixin desktop() {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
+
 

@@ -1,80 +1,157 @@
+@use "../styles/variables.scss" as *;
+
 .header {
+  width: 100%;
+  height: 60px;
+  background-color: $color-grey-dark;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+
+  &_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+  }
+
+  &_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
     width: 100%;
-    height: 51px;
-    background-color: #0e2020;
-    position: fixed;
-    top: 0px;
-    z-index: 99;
-  
-    // Menu hamburguesa
-    &_hamburger {
-      position: absolute;
-      right: 0;
-      background-color: transparent;
-      padding: 15px 15px 12px 15px;
-  
-      transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-      z-index: 1002;
-      cursor: pointer;
-  
-      &-line {
-        background: white;
-        margin-bottom: 4px;
-        border-radius: 2px;
-        width: 28px;
-        height: 4px;
-        opacity: 1;
-        transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-      }
-      //Hover hamburguesa
-      &:hover .top {
-        transform: translateY(-100%);
-      }
-      &:hover .bottom {
-        transform: translateY(100%);
-      }
+    z-index: -1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
     }
-  
-    //Hamburguesa active
-    &_hamburger.is-active .top {
-      transform: translateY(200%) rotate(45deg);
+  }
+
+  &_logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    img {
+      height: 100%;
     }
-    &_hamburger.is-active .mid {
-      opacity: 0;
+  }
+
+  // Menu hamburguesa
+  &_hamburger {
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    padding: 15px 15px 12px 15px;
+
+    transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    z-index: 1002;
+    cursor: pointer;
+
+    &-line {
+      background: white;
+      margin-bottom: 4px;
+      border-radius: 2px;
+      width: 28px;
+      height: 4px;
+      opacity: 1;
+      transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
     }
-    &_hamburger.is-active .bottom {
-      transform: translateY(-200%) rotate(135deg);
+    //Hover hamburguesa
+    &:hover .top {
+      transform: translateY(-100%);
     }
-    &_nav.is_active {
-      transform: translate3d(0px, 0px, 0px);
+    &:hover .bottom {
+      transform: translateY(100%);
     }
-  
-    // Menu desplegable
-    &_nav {
-      background-color: #0e2020;
-      height: 100vh;
-      position: absolute;
-      right: 0;
-      opacity: 0.9;
-      transform: translate3d(0px, -100%, 0px);
-      transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
-      z-index: 1001;
-      &_list {
-        padding: 80px 40px 40px 40px;
-        &-title {
-          text-align: right;
-          font-weight: bold;
-          padding-bottom: 20px;
-          font-size: 1.5rem;
-  
-          a {
-            color: white;
-            &:hover {
-              color: #dabe9b;
-            }
+  }
+
+  //Hamburguesa active
+  &_hamburger.is-active .top {
+    transform: translateY(200%) rotate(45deg);
+  }
+  &_hamburger.is-active .mid {
+    opacity: 0;
+  }
+  &_hamburger.is-active .bottom {
+    transform: translateY(-200%) rotate(135deg);
+  }
+  &_nav.is_active {
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  // Menu desplegable
+  &_nav {
+    background-color: $color-grey-dark;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0.9;
+    transform: translate3d(0px, -110%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    z-index: 1001;
+    &_list {
+      padding: 80px 40px 40px 40px;
+      &-title {
+        text-align: right;
+        font-weight: bold;
+        padding-bottom: 20px;
+        font-size: 1.5rem;
+        a {
+          color: white;
+          &:hover {
+            color: $color-brown-light;
           }
         }
       }
     }
   }
-  
+
+  @include desktop() {
+    height: 80px;
+    &_hamburger {
+      display: none;
+    }
+
+    &_nav {
+      transform: none;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: transparent;
+      height: 80px;
+      padding: 0 20px;
+      &_list {
+        display: flex;
+        gap: 20px;
+        padding: 0;
+        &-title {
+          padding: 0;
+        }
+      }
+    }
+
+    &_wrap {
+      height: 80px;
+    }
+    &_background {
+      height: 80px;
+    }
+  }
+}
+
+#home,
+#services,
+#activities,
+#faqs,
+#socialMedia,
+#contact {
+  scroll-margin-top: 70px;
+  @include desktop() {
+    scroll-margin-top: 100px;
+  }
+}

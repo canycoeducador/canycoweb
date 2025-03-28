@@ -1,0 +1,25 @@
+@use "../styles/variables.scss" as *;
+
+.activities {
+  color: white;
+  padding: 10% 5%;
+  background-color: $color-green-blue;
+  @include tablet() {
+    padding: 50px 0;
+  }
+  a {
+    display: block;
+    @include tablet() {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    @include desktop() {
+      width: 90%;
+      max-width: 1024px;
+    }
+    img {
+      max-width: 100%;
+      border: 3px solid $color-white-light;
+    }
+  }
+}

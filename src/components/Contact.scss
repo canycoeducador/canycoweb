@@ -1,0 +1,145 @@
+@use "../styles/variables.scss" as *;
+
+.main_section.contact {
+  position: relative;
+  margin: 30px 0;
+  @include tablet() {
+    margin: 50px 0;
+  }
+  // Valla de madera
+  .valla {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+    position: relative;
+    z-index: 0;
+
+    .travesano {
+      position: absolute;
+      width: 100%;
+      max-width: 550px;
+      height: 15px;
+      background: white;
+      border: 2px solid $color-grey-light;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      &:first-of-type {
+        top: 30%;
+      }
+      &:nth-of-type(2) {
+        top: 75%;
+      }
+    }
+    :nth-child(3) {
+      margin-left: 10px;
+    }
+    .tabla {
+      width: 50px;
+      height: 100%;
+      background: white;
+      border: 2px solid $color-grey-light;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+      &:last-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // Cartel de contacto
+  .contact-board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    padding: 15px 25px;
+    max-width: 400px;
+    background: white;
+    border: 2px solid $color-brown-medium;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    text-align: center;
+
+    // Clavos
+    .clavo {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: $color-grey-medium;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+      &.clavo-top-left {
+        top: 10px;
+        left: 10px;
+      }
+
+      &.clavo-top-right {
+        top: 10px;
+        right: 10px;
+      }
+
+      &.clavo-bottom-left {
+        bottom: 10px;
+        left: 10px;
+      }
+
+      &.clavo-bottom-right {
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+
+    h3 {
+      font-family: "Futura", sans-serif;
+      font-size: 1.8rem;
+      color: $color-grey-dark;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-family: "Futura", sans-serif;
+        font-size: 1rem;
+        color: $color-grey-medium;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          &:hover {
+            color: $color-brown-medium;
+          }
+
+          svg {
+            font-size: 1.5rem;
+            color: $color-brown-medium;
+          }
+
+          p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

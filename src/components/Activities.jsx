@@ -1,32 +1,13 @@
 import "./Activities.scss";
+import canycoCourse from "../assets/9.png";
 
 function Activities() {
   return (
-    <section className="main_sectionContact" id="contact">
-      <h3 className="main_sectionContact_title">
-        <span className="">03</span> Actividades y cursos
-      </h3>
-      <p className="main_sectionContact_subtitle">ultimas actividades propuestas</p>
-      <ul className="main_sectionContact_list">
-        <li className="main_sectionContact_list-element mail">
-          <a href="mailto:patricialobotejedor@gmail.com">
-            <i className="far fa-paper-plane"></i>
-            <p>lista 1</p>
-          </a>
-        </li>
-        <li className="main_sectionContact_list-element phone">
-          <a href="tel:636311105">
-            <i className="fas fa-mobile-alt"></i>
-            <p>lista 2</p>
-          </a>
-        </li>
-        <li className="main_sectionContact_list-element linkedin">
-          <a href="https://www.linkedin.com/in/patricia-lobo-tejedor/" target="_blank">
-            <i className="fab fa-linkedin"></i>
-            <p>lista 3</p>
-          </a>
-        </li>
-      </ul>
+    <section className="main_section activities" id="activities">
+      <h3 className="main_section-title">Últimas actividades y cursos</h3>
+      <a href="https://www.instagram.com/p/DGpxKe-tMFO/?hl=es&img_index=1">
+        <img src={canycoCourse} alt="" />
+      </a>
     </section>
   );
 }

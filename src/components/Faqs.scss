@@ -1,0 +1,16 @@
+@use "../styles/variables.scss" as *;
+
+.main_section.faqs {
+  margin: 10% 5%;
+  @include tablet() {
+    max-width: 80%;
+    margin: 50px auto;
+  }
+  @include desktop() {
+    width: 90%;
+    max-width: 1024px;
+  }
+  .MuiAccordionSummary-content.Mui-expanded span {
+    font-weight: 600;
+  }
+}

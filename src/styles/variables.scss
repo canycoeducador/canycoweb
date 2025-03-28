@@ -1,0 +1,20 @@
+// colors
+$color-grey-dark: #0e2020;
+$color-grey-medium: #555;
+$color-grey-light: #ddd;
+$color-white-light: #f9f8ef;
+$color-brown-light: #dabe9b;
+$color-brown-medium: #d19962;
+$color-green-blue: #71c0b1;
+
+// media query mixins
+@mixin tablet() {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @mixin desktop() {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
